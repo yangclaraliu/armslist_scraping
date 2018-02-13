@@ -50,4 +50,5 @@ for pg in gun:
 table = pd.DataFrame(data)
 table.columns = ['url', 'title','location','price','post date','category','manufacturer','caliber','action','firearm type','postcontent']
 table = table[table.title != 'Unrecognized Request']
-table.to_csv("strange.csv", sep=',',encoding='utf-8')
+path = r'C:\liux3204\Documents\Github\SPHStudentProject'
+table.to_csv("C:\Users\liux3204\Documents\GitHub\SPHStudentProject\strange.csv", sep=',',encoding='utf-8')
