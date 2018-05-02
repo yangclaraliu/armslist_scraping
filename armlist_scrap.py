@@ -12,6 +12,7 @@ begin = range(start-100,start+999999,100)
 end = range(start-1, start+1000000,100)
 initial = 'YL' #need to change based on your initial
 
+<<<<<<< HEAD
 for record in range(1,3):
     t0 = time.time()
     gun = ["http://www.armslist.com/posts/"+str(i) for i in range(begin[record],end[record])]  
