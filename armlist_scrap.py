@@ -12,7 +12,7 @@ begin = range(start-100,start+999999,100)
 end = range(start-1, start+1000000,100)
 initial = 'YL' #need to change based on your initial
 
-<<<<<<< HEAD
+
 for record in range(1,3):
     t0 = time.time()
     gun = ["http://www.armslist.com/posts/"+str(i) for i in range(begin[record],end[record])]  
@@ -86,4 +86,4 @@ table.columns = ['url', 'title','location','price','post date','category','manuf
 table = table[table.title != 'Unrecognized Request']
 path = r'C:\liux3204\Documents\Github\SPHStudentProject'
 table.to_csv("C:\Users\liux3204\Documents\GitHub\SPHStudentProject\strange.csv", sep=',',encoding='utf-8')
->>>>>>> 6c3ce30035506219f822f6a2f74f85fddb7a8b28
+
