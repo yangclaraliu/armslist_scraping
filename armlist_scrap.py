@@ -65,3 +65,24 @@ for record in range(1,3):
     table.to_csv(''.join([initial,'_',str(begin[record]),'_',str(end[record]),'.csv']), sep=',',encoding='utf-8')
     t1 = time.time()
     total = t1-t0
+=======
+        if "Action" in avai:
+            act = cat.split("\n\n")[avai.index("Action")].split("\n\r\n")[1]
+        else: "no type"
+                    
+        if "Firearm Type" in avai:
+            ftype = cat.split("\n\n")[avai.index("Firearm Type")].split("\n\r\n")[1]
+        else: "no type"
+        
+        if "Manufacturer" in avai:
+            man = cat.split("\n\n")[avai.index("Manufacturer")].split("\n\r\n")[1]
+        else: "no type"
+        
+    data.append((pg,title,loc,price,postdate,category,man,caliber,act,ftype,postcontent))
+    time.sleep(2)
+table = pd.DataFrame(data)
+table.columns = ['url', 'title','location','price','post date','category','manufacturer','caliber','action','firearm type','postcontent']
+table = table[table.title != 'Unrecognized Request']
+path = r'C:\liux3204\Documents\Github\SPHStudentProject'
+table.to_csv("C:\Users\liux3204\Documents\GitHub\SPHStudentProject\strange.csv", sep=',',encoding='utf-8')
+>>>>>>> 6c3ce30035506219f822f6a2f74f85fddb7a8b28
