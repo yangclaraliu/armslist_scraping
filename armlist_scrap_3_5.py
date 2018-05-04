@@ -5,15 +5,15 @@ import os
 
 from bs4 import BeautifulSoup
 
-os.chdir("/Users/Yang/GitHub/SPHStudentProject")
+os.chdir("C:\\Users\\liux3204\\Documents\\GitHub\\SPHStudentProject")
 
 start = 7000000 #need to change based on the number you were given
-begin = list(range(start-100,start+999999,100))
-end = list(range(start-1, start+1000000,100))
+begin = list(range(start,start+999999,1000))
+end = list(range(start+999, start+1000000,1000))
 initial = 'YL' #need to change based on your initial
 
 
-for record in range(1,2):
+for record in range(len(begin)):
     t0 = time.time()
     gun = ["http://www.armslist.com/posts/"+str(i) for i in range(begin[record],end[record])]  
     data = []
