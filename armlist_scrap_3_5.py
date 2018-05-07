@@ -29,7 +29,8 @@ for record in range(len(begin)):
                 l1[i] = location[i].text
             l2 = [_f for _f in ''.join(l1).splitlines() if _f]
             loc = l2[l2.index(" Location:")+1]
-        else: loc = "no type"                            
+        else: 
+            loc = "no type"                            
         price = soup.find("span", attrs={"class":"price"}).text.strip() if soup.find("span", attrs={"class":"price"}) else "no type"
         postdate = soup.find("span", attrs={"class":"date"}).text.strip() if soup.find("span", attrs={"class":"date"}) else "no type"
         postcontent = soup.find("div", attrs={"class":"postContent"}).text.strip() if soup.find("div", attrs={"class":"postContent"}) else "no type"
@@ -47,23 +48,28 @@ for record in range(len(begin)):
                 avai[i] =  cat.split("\n\n\n")[i].split("\n")[0]
             if "CATEGORY" in avai:
                 category = cat.split("\n\n")[avai.index("CATEGORY")].split()[1]
-            else: "no type"
+            else: 
+                category = "no type"
             
             if "Caliber" in avai:
                 caliber = cat.split("\n\n")[avai.index("Caliber")].split("\n\r\n")[1]
-            else: "no type"
+            else: 
+                caliber = "no type"
     
             if "Action" in avai:
                 act = cat.split("\n\n")[avai.index("Action")].split("\n\r\n")[1]
-            else: "no type"
+            else:
+                act = "no type"
                         
             if "Firearm Type" in avai:
                 ftype = cat.split("\n\n")[avai.index("Firearm Type")].split("\n\r\n")[1]
-            else: "no type"
+            else: 
+                ftype = "no type"
             
             if "Manufacturer" in avai:
                 man = cat.split("\n\n")[avai.index("Manufacturer")].split("\n\r\n")[1]
-            else: "no type"
+            else: 
+                man = "no type"
             
         data.append((pg,title,loc,price,postdate,category,man,caliber,act,ftype,postcontent))
         time.sleep(0.5)
