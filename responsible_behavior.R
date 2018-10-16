@@ -1,11 +1,45 @@
-setwd("~/")
-compiled <- readRDS("chopped.rds")
+library(tidyverse)
 
-responsible <- paste(c("CCW", "Concealed Carry Weapon", "CCL", "Concealed carry license", "FFL", "Federal Firearm License", "Permit to purchase","P2P", "Background check"),collapse = "|")
+setwd("~/")
+compiled <- readRDS("chopped_vendor.rds")
+?mutate
+
+responsible <- c("CCW", "Concealed Carry Weapon", "CCL", "Concealed carry license", "FFL", "Federal Firearm License", "Permit to purchase","P2P", "Background check", "License", "Permit", "bill of sale")
+responsible <- paste0("\\<",responsible)  
+responsible <- paste0(responsible,"\\>")  
+responsible <- paste(responsible,collapse = "|")
+
+
+
+
+compiled %>%
+  map(~as_tibble)
+  map(~mutate(., resp_yn = grepl(responsible,as.character(postcontent), ignore.case = T)))
+
+
+
+
+intersect(which(grepl("required",compiled[[1]]$postcontent)==T),which(grepl("not required",compiled[[1]]$postcontent) == F))
+
+which(grepl("not required",compiled[[1]]$postcontent))[1:10]
+
+compiled[[1]]$postcontent[11275]
+
+
+
+
+
+
+
+responsible_count <- sapply(1:9, function(x) length(which(grepl(responsible,compiled[[x]]$postcontent,ignore.case = T)==T)))
+
+
+
+
 
 #total
-responsible_count <- sapply(1:9, function(x) length(which(grepl(responsible,compiled[[x]]$postcontent,ignore.case = T)==T)))
-total_count <- sapply(1:9, function(x) nrow(compiled[[x]]))
+
+total_count <- sapply(1:9, function(x) nrow(.compiled[[x]]))
 
 sum(responsible_count)
 sum(total_count)

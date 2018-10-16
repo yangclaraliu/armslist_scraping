@@ -6,7 +6,7 @@ subf <- paste(home,list.files(pattern="[0-9]m"),sep="")
 ready <- c(1:9)
 compiled <- list()
   
-for(i in ready){
+for(i in 5:9){
   setwd(subf[i])
   read_list <- list()
   for(j in 1:length(list.files())){
@@ -14,7 +14,7 @@ for(i in ready){
   }
   compiled[[i]] <- do.call(rbind,read_list)
   setwd("~/")
-  save(compiled,file="compiled.rdata")
+  saveRDS(compiled,file="compiled.rds")
 }
 
 
