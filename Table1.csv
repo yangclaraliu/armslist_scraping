@@ -1,0 +1,17 @@
+,Gun Category,"Total listings by category
+(#)","Listing displaying responsible relling Information
+(#)","Percentage of listings displaying responsible selling
+(%, 95%CI)"
+1,Handguns,2367588,338935,"14.32 [13.31, 15.32]"
+2,Rifles,1636201,144032,"8.8 [7.99, 9.62]"
+3,Shotguns,411276,28601,"6.95 [6.24, 7.67]"
+4,Gun,261189,5664,"2.17 [1.76, 2.58]"
+5,Tactical,79469,649,"0.82 [0.56, 1.07]"
+6,Antique,52493,3580,"6.82 [6.1, 7.54]"
+7,Reloading,47624,146,"0.31 [0.15, 0.46]"
+8,Muzzle,33057,957,"2.89 [2.43, 3.36]"
+9,NFA,8588,975,"11.35 [10.45, 12.25]"
+10,Firearms,5827,294,"5.05 [4.43, 5.66]"
+11,Other,347,7,"2.02 [1.63, 2.41]"
+12,All,111,14,"12.61 [11.67, 13.56]"
+,Total,4903770,523854,"10.68 [9.81, 11.55]"
